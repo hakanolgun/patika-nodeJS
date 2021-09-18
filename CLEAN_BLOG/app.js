@@ -1,16 +1,24 @@
-const express = require('express');
-
+const express = require("express");
+const ejs = require("ejs");
+const path = require("path");
 const app = express();
 
-app.get('/', (req, res) => {
+//template engine
+app.set("view engine", "ejs");
 
-  const blog = {
-    id: 1,
-    title: "Blog Title",
-    description: "Blog description"
-  }
-  res.send(photo)
-})
+// Mıddleware
+app.use(express.static("public"));
+
+// Routes
+app.get("/", (req, res) => {
+  res.render("index");
+});
+app.get("/about", (req, res) => {
+  res.render("about");
+});
+app.get("/add_post", (req, res) => {
+  res.render("add_post");
+});
 
 const port = 3377;
 app.listen(port, () => {
