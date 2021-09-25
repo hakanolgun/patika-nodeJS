@@ -62,6 +62,9 @@
           <p>Placeholder text by
             <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by
             <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+
+            <a href="/posts/edit/<%= post._id %>">Update Post</a>
+            <a href="/posts/<%= post._id %>?_method=DELETE" onclick="return confirm('Are you sure?')">Delete Post</a>
         </div>
       </div>
     </div>
